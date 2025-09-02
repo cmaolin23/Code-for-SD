@@ -76,7 +76,6 @@ Run:
 * `--trials T` : number of trials (default = 1)
 * `--seed S` : random seed (default = 42)
 * `--query ID` : specify single query node
-* `--directed` : treat graph as directed
 
 ### Output
 
