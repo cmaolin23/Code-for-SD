@@ -46,7 +46,8 @@ It guarantees **optimal solutions** under the given parameters:
    3 4
    ```
 2. **Query file** (`test_queries.txt`)
-
+   
+We randomly choose 100 nodes to use for testing.
    ```
    12
    45
