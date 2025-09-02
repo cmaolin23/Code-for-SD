@@ -11,7 +11,7 @@ This project contains three main components for graph diversity optimization:
 ## 🔹 Exact Algorithm (`exact`)
 
 ### File
-`diversity_exact_gcc8.cpp`
+`diversity_exact.cpp`
 
 ### Language
 C++ (tested with GCC 8+)
@@ -111,8 +111,11 @@ The same as Exact.
 Compile:
 ```bash
 g++ -std=c++14 -O2 -Wall -Wextra -o greedy greedy.cpp
+```
 Run:
+```bash
 ./greedy <graph.txt> <tau> <b> <method> --test <test.txt> [--seed S] [--trials T]
+```
 Arguments:
 
   <graph.txt> : input graph file
@@ -139,10 +142,17 @@ Arguments:
 ```
 
 ###Output
+
 Results are written to:
+
   <graph.txt>_Greedy_<method>_result.txt
+
 Each query result includes:
+
 Query <id> q0=<initial> new_q=<final> increase=<delta> time_us=<runtime>
+
 At the end, global statistics are appended:
+
   Total diversity increase
+
   Total runtime (ms)
