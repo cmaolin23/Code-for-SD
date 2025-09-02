@@ -47,8 +47,9 @@ It guarantees **optimal solutions** under the given parameters:
    ... ...
    ```
 2. **Query file** (`test_queries.txt`)
-   
+
    We randomly choose 100 nodes to use for testing.
+
    ```
    12
    45
@@ -132,7 +133,7 @@ Although they **do not guarantee optimal solutions**, they are **much faster** t
 ### Input
 
 1. **Graph file** (edge list)
-2. **Query file** (e.g., `test.txt`) – same format as Exact, We randomly choose 100 nodes to use for testing
+2. **Query file** (e.g., `test.txt`) – same format as Exact, we randomly choose 100 nodes to use for testing
 
 ### Usage
 
@@ -186,22 +187,18 @@ At the end, global statistics are appended:
 
 ## 🔹 Reinforcement Learning (`RL`)
 
-### File
+### Files
 
+`main.py`
 `algorithm.py`
-
 `args.py`
-
 `environment.py`
-
-`main.py` 
-
 `model_a2c.py`
+`utils.py`
 
-`utils.py` 
+### Language
 
-### Laugage
-Python 3.7.1 + PyTorch 2.1.0
+Python 3.7+ + PyTorch 2.1.0
 
 ### Overview
 
@@ -210,14 +207,31 @@ This module uses an **A2C-based RL method** to maximize diversity in graphs.
 ### Input
 
 * Graph file (`graph.txt`)
-* Query file for training (`training_query.txt`) -We randomly choose 400 nodes to use for training
-* Query file for testing (`testing_query.txt`) -We randomly choose 100 nodes to use for testing
+* Query file for training (`training_query.txt`) – we randomly choose 400 nodes to use for training
+* Query file for testing (`testing_query.txt`) – we randomly choose 100 nodes to use for testing
 * Budget \$b\$ and threshold \$\tau\$
+
+**Optional arguments**:
+
+* `--budget` : maximum number of edges allowed to add
+* `--train_epochs` : number of training epochs
+* `--emb_dim` : embedding dimension
+* `--hidden` : hidden layer size
+* `--lr` : learning rate
+* `--gamma` : discount factor
+* `--ent_coef` : entropy coefficient
+* `--value_coef` : value loss coefficient
+* `--n_step` : n-step return for A2C
+* `--device` : 'cpu' or 'cuda'
+* `--seed` : random seed
+* `--out_dir` : directory to save results and models
+* `--save_path` : path to save trained model
+* `--query` : specify a single query node for evaluation (optional)
 
 ### Usage
 
 ```bash
-python main.py --graph graph.txt --tau <tau> --budget <b> --train training_query.txt --test testing_query.txt--query [--seed S]
+python main.py --graph graph.txt --tau <tau> --budget <b> --train training_query.txt --test testing_query.txt [--query ID] [--seed S]
 ```
 
 ### Output
@@ -225,6 +239,3 @@ python main.py --graph graph.txt --tau <tau> --budget <b> --train training_query
 * Logs training progress and results per query node
 * Saves model checkpoints and final diversity metrics
 * Summary statistics include total diversity increase and runtime
-
-```
-```
