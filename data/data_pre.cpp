@@ -102,7 +102,7 @@ int main()
             continue;
         int components = countConnectedComponents(graph, q);
         // if (components >= threshold)
-        if (components <= 20 && components >= 15)
+        if (components >= 2)
         {
             selectedNodes.push_back(q);
         }
@@ -118,3 +118,4 @@ int main()
 
     return 0;
 }
+
