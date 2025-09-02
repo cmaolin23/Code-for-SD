@@ -213,7 +213,7 @@ This module uses an **A2C-based RL method** to maximize diversity in graphs.
 ### Usage
 
 ```bash
-python main.py --graph graph.txt --tau <tau> --budget <b> --training_query.txt --testing_query.txt--query [--seed S]
+python main.py --graph graph.txt --tau <tau> --budget <b> --train training_query.txt --test testing_query.txt--query [--seed S]
 ```
 
 ### Output
