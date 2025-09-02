@@ -117,7 +117,7 @@ This module provides **three heuristic greedy algorithms** to approximate the di
 3. **Improved Simple (ISI)** – a more refined grouping method using size-based partitioning.
 
 <p align="center">
-  <img src="./pics/Greedy.png" alt="Three heuristic greedy algorithms" width="600"/>
+  <img src="./pics/Greedy.png" alt="Three heuristic greedy algorithms" width="500"/>
 </p>
 
 
