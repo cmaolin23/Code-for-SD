@@ -34,6 +34,7 @@ It guarantees **optimal solutions** under the given parameters:
 
 ### Input
 1. **Graph file** (edge list, e.g.):
+
 1 2
 
 2 3
