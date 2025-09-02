@@ -200,7 +200,8 @@ At the end, global statistics are appended:
 
 `utils.py` 
 
-(Python + PyTorch)
+### Laugage
+Python 3.7.1 + PyTorch 2.1.0
 
 ### Overview
 
