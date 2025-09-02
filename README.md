@@ -47,7 +47,7 @@ It guarantees **optimal solutions** under the given parameters:
    ```
 2. **Query file** (`test_queries.txt`)
    
-We randomly choose 100 nodes to use for testing.
+   We randomly choose 100 nodes to use for testing.
    ```
    12
    45
@@ -130,7 +130,7 @@ Although they **do not guarantee optimal solutions**, they are **much faster** t
 ### Input
 
 1. **Graph file** (edge list)
-2. **Query file** (e.g., `test.txt`) – same format as Exact
+2. **Query file** (e.g., `test.txt`) – same format as Exact, We randomly choose 100 nodes to use for testing
 
 ### Usage
 
@@ -207,8 +207,8 @@ This module uses an **A2C-based RL method** to maximize diversity in graphs.
 ### Input
 
 * Graph file (`graph.txt`)
-* Query file for training (`training_query.txt`)
-* Query file for testing (`testing_query.txt`)
+* Query file for training (`training_query.txt`) -We randomly choose 400 nodes to use for training
+* Query file for testing (`testing_query.txt`) -We randomly choose 100 nodes to use for testing
 * Budget \$b\$ and threshold \$\tau\$
 
 ### Usage
