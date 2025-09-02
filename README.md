@@ -184,13 +184,21 @@ At the end, global statistics are appended:
 ## 🔹 Reinforcement Learning (`RL`)
 
 ### File
+
 `algorithm.py`
+
 `args.py`
+
 `environment.py`
+
 `main.py` 
+
 `model_a2c.py`
+
 `utils.py` 
+
 (Python + PyTorch)
+
 ### Overview
 
 This module uses an **A2C-based RL method** to maximize diversity in graphs.
@@ -198,13 +206,14 @@ This module uses an **A2C-based RL method** to maximize diversity in graphs.
 ### Input
 
 * Graph file (`graph.txt`)
-* Query file (`test.txt`)
+* Query file for training (`training_query.txt`)
+* Query file for testing (`testing_query.txt`)
 * Budget \$b\$ and threshold \$\tau\$
 
 ### Usage
 
 ```bash
-python main.py --graph graph.txt --query test.txt --tau <tau> --budget <b> [--seed S]
+python main.py --graph graph.txt --tau <tau> --budget <b> --training_query.txt --testing_query.txt--query [--seed S]
 ```
 
 ### Output
