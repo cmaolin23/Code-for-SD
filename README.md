@@ -129,6 +129,7 @@ Arguments:
   --trials T : number of trials (default = 1)
   
   --query ID : specify single query node (instead of reading test file)
+```
 
 ###Output
 Results are written to:
