@@ -184,9 +184,13 @@ At the end, global statistics are appended:
 ## 🔹 Reinforcement Learning (`RL`)
 
 ### File
-
-`main.py` (Python + PyTorch)
-
+`algorithm.py`
+`args.py`
+`environment.py`
+`main.py` 
+`model_a2c.py`
+`utils.py` 
+(Python + PyTorch)
 ### Overview
 
 This module uses an **A2C-based RL method** to maximize diversity in graphs.
