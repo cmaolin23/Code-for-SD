@@ -35,16 +35,18 @@ It guarantees **optimal solutions** under the given parameters:
 ### Input
 1. **Graph file** (edge list, e.g.):
 
-1 2
+  1 2
 
-2 3
+  2 3
 
-3 4
+  3 4
 
 
 1. **Query file** (`test_queries.txt`):
 12
+
 45
+
 78
 
 
@@ -54,10 +56,10 @@ g++ -O2 diversity_exact_gcc8.cpp -o exact
 ./exact <graph.txt> <tau> <b> --test test_queries.txt
 
 Optional arguments:
-· --trials T : number of trials (default = 1)
-· --seed S : random seed (default = 42)
-· --query ID : specify single query node
-· --directed : treat graph as directed
+  · --trials T : number of trials (default = 1)
+  · --seed S : random seed (default = 42)
+  · --query ID : specify single query node
+  · --directed : treat graph as directed
 
 ### Output
 Results are written to <graph.txt>exact_result.txt.
@@ -67,4 +69,72 @@ At the end of the file, global statistics are appended, including:
   sum of diversity gain
   total runtime (ms)
 
+## 🔹 Greedy Algorithms (`greedy`)
 
+### File
+`greedy.cpp`
+
+### Language
+C++ (tested with GCC 8+, C++14)
+
+### Overview
+This module provides **three heuristic greedy algorithms** to approximate the diversity improvement:
+
+  1. **Next Fit (NF)** – packs components sequentially until the threshold $\tau$ is reached.  
+  2. **Simple (SI)** – packs components using the shortest prefix and fills from the tail.  
+  3. **Improved Simple (ISI)** – a more refined grouping method using size-based partitioning.  
+
+Although they **do not guarantee optimal solutions**, they are **much faster** than the exact BnB approach, making them suitable for large graphs.
+
+### Key Components
+- **Graph Reader**: reads graph, compresses node IDs, builds adjacency list  
+- **Neighbor Subgraph Extraction**: builds subgraph of neighbors for each query node  
+- **Connected Components**: computes components within the neighbor subgraph  
+- **Greedy Packing**:  
+  - NF, SI, ISI grouping strategies  
+  - Plan edges within budget $b$  
+- **Result Writer**: logs query results and summary statistics  
+
+### Input
+1. **Graph file** (edge list)  
+2. **Query file** (e.g., `test.txt`)
+The same as Exact. 
+
+### Usage
+Compile:
+```bash
+g++ -std=c++14 -O2 -Wall -Wextra -o greedy greedy.cpp
+Run:
+./greedy <graph.txt> <tau> <b> <method> --test <test.txt> [--seed S] [--trials T]
+Arguments:
+
+  <graph.txt> : input graph file
+  
+  <tau> : threshold (minimum component size to count as qualified)
+  
+  <b> : budget (max number of edges to add)
+  
+  <method> : choose greedy algorithm
+  
+  1 = Next Fit (NF)
+  
+  2 = Simple (SI)
+  
+  3 = Improved Simple (ISI)
+  
+  --test file : test query file
+  
+  --seed S : random seed (default = 42)
+  
+  --trials T : number of trials (default = 1)
+  
+  --query ID : specify single query node (instead of reading test file)
+
+###Output
+Results are written to:
+  <graph.txt>_Greedy_<method>_result.txt
+Each query result includes:
+Query <id> q0=<initial> new_q=<final> increase=<delta> time_us=<runtime>
+At the end, global statistics are appended:
+  Total diversity increase
+  Total runtime (ms)
