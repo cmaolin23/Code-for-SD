@@ -117,43 +117,30 @@ Run:
 ./greedy <graph.txt> <tau> <b> <method> --test <test.txt> [--seed S] [--trials T]
 ```
 
-Arguments:
+### Arguments
 
-  <graph.txt>: input graph file
-  
-  <tau>: threshold (minimum component size to count as qualified)
-  
-  <b>: budget (max number of edges to add)
-  
-  <method>: choose greedy algorithm
-  
-  1 = Next Fit (NF)
-  
-  2 = Simple (SI)
-  
-  3 = Improved Simple (ISI)
-  
-  --test file : test query file
-  
-  --seed S : random seed (default = 42)
-  
-  --trials T : number of trials (default = 1)
-  
-  --query ID : specify single query node (instead of reading test file)
+- `<graph.txt>` : input graph file  
+- `<tau>` : threshold (minimum component size to count as qualified)  
+- `<b>` : budget (max number of edges to add)  
+- `<alg>` : choose greedy algorithm  
+  - `1` = Next Fit (NF)  
+  - `2` = Simple (SI)  
+  - `3` = Improved Simple (ISI)  
+- `--test file` : test query file  
+- `--seed S` : random seed (default = 42)  
+- `--trials T` : number of trials (default = 1)  
+- `--query ID` : specify single query node (instead of reading test file)  
 
-
-###Output
+### Output
 
 Results are written to:
-
-  <graph.txt>_Greedy_<method>_result.txt
+  <graph.txt>Greedy_result.txt
 
 Each query result includes:
-
-Query <id> q0=<initial> new_q=<final> increase=<delta> time_us=<runtime>
+Query q0= ... new_q= ... increase= ... time_us= ...
 
 At the end, global statistics are appended:
 
-  Total diversity increase
+- Total diversity increase  
+- Total runtime (ms)  
 
-  Total runtime (ms)
