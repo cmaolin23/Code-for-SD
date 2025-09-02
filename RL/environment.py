@@ -145,7 +145,7 @@ class GraphEnv:
         else:
             g_t = max(0, self.tau - size_p - size_q)
             delta = 0.1
-            reward = - delta * float(g_t)
+            reward = - delta ** float(g_t)
 
         # Merge: remove both indices (higher first) and append union comp
         rep_nodes = []
@@ -182,3 +182,4 @@ class GraphEnv:
 
         next_state = self._get_state()
         return next_state, float(reward), bool(self.done), {}
+
