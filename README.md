@@ -115,6 +115,7 @@ This module provides **three heuristic greedy algorithms** to approximate the di
 1. **Next Fit (NF)** – sorted and packs components sequentially until the threshold \$\tau\$ is reached.
 2. **Simple (SI)** – sorted and packs components using the shortest prefix and fills from the tail.
 3. **Improved Simple (ISI)** – a more refined grouping method using size-based partitioning.
+(./pics/greedy.png "Three heuristic greedy algorithms")
 
 Although they **do not guarantee optimal solutions**, they are **much faster** than the exact BnB approach, making them suitable for large graphs.
 
