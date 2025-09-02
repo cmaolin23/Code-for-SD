@@ -148,7 +148,7 @@ Run:
 ./greedy <graph.txt> <tau> <b> <method> --test <test.txt> [--seed S] [--trials T]
 ```
 
-### Arguments
+**Optional arguments**:
 
 * `<graph.txt>` : input graph file
 * `<tau>` : threshold (minimum component size to count as qualified)
