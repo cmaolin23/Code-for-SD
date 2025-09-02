@@ -35,10 +35,13 @@ It guarantees **optimal solutions** under the given parameters:
 ### Input
 1. **Graph file** (edge list, e.g.):
 1 2
+
 2 3
+
 3 4
 
-2. **Query file** (`test_queries.txt`):
+
+1. **Query file** (`test_queries.txt`):
 12
 45
 78
