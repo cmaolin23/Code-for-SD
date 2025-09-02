@@ -43,6 +43,7 @@ It guarantees **optimal solutions** under the given parameters:
 
 
 1. **Query file** (`test_queries.txt`):
+   
 12
 
 45
@@ -54,6 +55,7 @@ It guarantees **optimal solutions** under the given parameters:
 ```bash
 g++ -O2 diversity_exact_gcc8.cpp -o exact
 ./exact <graph.txt> <tau> <b> --test test_queries.txt
+```
 
 Optional arguments:
   · --trials T : number of trials (default = 1)
