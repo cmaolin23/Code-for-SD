@@ -116,7 +116,10 @@ This module provides **three heuristic greedy algorithms** to approximate the di
 2. **Simple (SI)** – sorted and packs components using the shortest prefix and fills from the tail.
 3. **Improved Simple (ISI)** – a more refined grouping method using size-based partitioning.
 
-<img src="./pics/Greedy.png" alt="Three heuristic greedy algorithms" width="300"/>
+<p align="center">
+  <img src="./pics/Greedy.png" alt="Three heuristic greedy algorithms" width="600"/>
+</p>
+
 
 Although they **do not guarantee optimal solutions**, they are **much faster** than the exact BnB approach, making them suitable for large graphs.
 
