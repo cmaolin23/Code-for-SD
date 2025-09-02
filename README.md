@@ -116,15 +116,16 @@ Run:
 ```bash
 ./greedy <graph.txt> <tau> <b> <method> --test <test.txt> [--seed S] [--trials T]
 ```
+
 Arguments:
 
-  <graph.txt> : input graph file
+  <graph.txt>: input graph file
   
-  <tau> : threshold (minimum component size to count as qualified)
+  <tau>: threshold (minimum component size to count as qualified)
   
-  <b> : budget (max number of edges to add)
+  <b>: budget (max number of edges to add)
   
-  <method> : choose greedy algorithm
+  <method>: choose greedy algorithm
   
   1 = Next Fit (NF)
   
@@ -139,7 +140,7 @@ Arguments:
   --trials T : number of trials (default = 1)
   
   --query ID : specify single query node (instead of reading test file)
-```
+
 
 ###Output
 
