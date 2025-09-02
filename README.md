@@ -44,6 +44,7 @@ It guarantees **optimal solutions** under the given parameters:
    1 2
    2 3
    3 4
+   ... ...
    ```
 2. **Query file** (`test_queries.txt`)
    
@@ -52,6 +53,7 @@ It guarantees **optimal solutions** under the given parameters:
    12
    45
    78
+   ...
    ```
 
 ### Usage
