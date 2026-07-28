@@ -10,15 +10,15 @@ This project contains three main components for graph diversity optimization:
 
 ## 🔹 Exact Algorithm (`exact`)
 
-### File
+### File 
 
 `diversity_exact.cpp`
 
-### Language
+### Language 
 
 C++ (tested with GCC 8+)
 
-### Overview
+### Overview 
 
 The exact method computes the **maximum diversity improvement** by exploring all possibilities with a **Branch-and-Bound (BnB) algorithm**.
 It guarantees **optimal solutions** under the given parameters:
@@ -28,7 +28,7 @@ It guarantees **optimal solutions** under the given parameters:
 * Budget \$b\$ (maximum number of edges allowed to add)
 * Query nodes (from `test_queries.txt`)
 
-### Key Components
+### Key Components 
 
 * **Union-Find (DSU)**: maintains connected components
 * **Graph Reader**: loads graph, compresses node IDs, builds adjacency list
@@ -57,7 +57,7 @@ It guarantees **optimal solutions** under the given parameters:
    ...
    ```
 
-### Usage
+### Usage 
 
 Compile:
 
@@ -77,7 +77,7 @@ Run:
 * `--seed S` : random seed (default = 42)
 * `--query ID` : specify single query node
 
-### Output
+### Output 
 
 Results are written to:
 
@@ -100,7 +100,7 @@ At the end of the file, global statistics are appended:
 
 ## 🔹 Greedy Algorithms (`greedy`)
 
-### File
+### File 
 
 `greedy.cpp`
 
@@ -108,7 +108,7 @@ At the end of the file, global statistics are appended:
 
 C++ (tested with GCC 8+, C++14)
 
-### Overview
+### Overview 
 
 This module provides **three heuristic greedy algorithms** to approximate the diversity improvement:
 
@@ -123,7 +123,7 @@ This module provides **three heuristic greedy algorithms** to approximate the di
 
 Although they **do not guarantee optimal solutions**, they are **much faster** than the exact BnB approach, making them suitable for large graphs.
 
-### Key Components
+### Key Components 
 
 * **Graph Reader**: reads graph, compresses node IDs, builds adjacency list
 * **Neighbor Subgraph Extraction**: builds subgraph of neighbors for each query node
@@ -134,12 +134,12 @@ Although they **do not guarantee optimal solutions**, they are **much faster** t
   * Plan edges within budget \$b\$
 * **Result Writer**: logs query results and summary statistics
 
-### Input
+### Input 
 
 1. **Graph file** (edge list)
 2. **Query file** (e.g., `test.txt`) – same format as Exact, we randomly choose 100 nodes to use for testing
 
-### Usage
+### Usage 
 
 Compile:
 
@@ -168,7 +168,7 @@ Run:
 * `--trials T` : number of trials (default = 1)
 * `--query ID` : specify single query node (instead of reading test file)
 
-### Output
+### Output 
 
 Results are written to:
 
@@ -191,7 +191,7 @@ At the end, global statistics are appended:
 
 ## 🔹 Reinforcement Learning (`RL`)
 
-### Files
+### Files 
 
 `main.py`
 `algorithm.py`
@@ -200,15 +200,15 @@ At the end, global statistics are appended:
 `model_a2c.py`
 `utils.py`
 
-### Language
+### Language 
 
 Python 3.7+ + PyTorch 2.1.0
-
-### Overview
+ 
+### Overview 
 
 This module uses an **A2C-based RL method** to maximize diversity in graphs.
 
-### Input
+### Input 
 
 * Graph file (`graph.txt`)
 * Query file for training (`training_query.txt`) – we randomly choose 400 nodes to use for training
@@ -232,7 +232,7 @@ This module uses an **A2C-based RL method** to maximize diversity in graphs.
 * `--save_path` : path to save trained model
 * `--query` : specify a single query node for evaluation (optional)
 
-### Usage
+### Usage 
 
 ```bash
 python main.py --graph graph.txt --tau <tau> --budget <b> --train training_query.txt --test testing_query.txt [--query ID] [--seed S]
