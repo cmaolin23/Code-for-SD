@@ -3,7 +3,7 @@
 This project contains three main components for graph diversity optimization:
 
 1. **Exact Algorithm (`exact`)** – implemented in **C++**
-2. **Greedy Algorithms (`greedy`)** – two heuristic approaches, implemented in **C++**
+2. **Greedy Algorithms (`greedy`)** – heuristic approache, implemented in **C++**
 3. **Reinforcement Learning (`RL`)** – an A2C-based method, implemented in **Python + PyTorch**
 
 ---
