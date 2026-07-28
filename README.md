@@ -110,14 +110,9 @@ C++ (tested with GCC 8+, C++14)
 
 ### Overview 
 
-This module provides **three heuristic greedy algorithms** to approximate the diversity improvement:
+This module provides **heuristic greedy algorithms** to approximate the diversity improvement:
 
-1. **Next Fit (NF)** – sorted and packs components sequentially until the threshold $\\tau$ is reached.
-2. **Simple (SI)** – sorted and packs components using the shortest prefix and fills from the tail.
-
-<p align="center">
-  <img src="./pics/Greedy.png" alt="Two heuristic greedy algorithms" width="500"/>
-</p>
+**Simple (SI)** – sorted and packs components using the shortest prefix and fills from the tail.
 
 
 Although they **do not guarantee optimal solutions**, they are **much faster** than the exact BnB approach, making them suitable for large graphs.
@@ -129,7 +124,7 @@ Although they **do not guarantee optimal solutions**, they are **much faster** t
 * **Connected Components**: computes components within the neighbor subgraph
 * **Greedy Packing**:
 
-  * NF, SI grouping strategies
+  * SI grouping strategies
   * Plan edges within budget \$b\$
 * **Result Writer**: logs query results and summary statistics
 
@@ -159,7 +154,6 @@ Run:
 * `<b>` : budget (max number of edges to add)
 * `<method>` : choose greedy algorithm
 
-  * `1` = Next Fit (NF)
   * `2` = Simple (SI)
 * `--test file` : test query file
 * `--seed S` : random seed (default = 42)
