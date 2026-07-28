@@ -3,7 +3,7 @@
 This project contains three main components for graph diversity optimization:
 
 1. **Exact Algorithm (`exact`)** – implemented in **C++**
-2. **Greedy Algorithms (`greedy`)** – three heuristic approaches, implemented in **C++**
+2. **Greedy Algorithms (`greedy`)** – two heuristic approaches, implemented in **C++**
 3. **Reinforcement Learning (`RL`)** – an A2C-based method, implemented in **Python + PyTorch**
 
 ---
@@ -114,10 +114,9 @@ This module provides **three heuristic greedy algorithms** to approximate the di
 
 1. **Next Fit (NF)** – sorted and packs components sequentially until the threshold $\\tau$ is reached.
 2. **Simple (SI)** – sorted and packs components using the shortest prefix and fills from the tail.
-3. **Improved Simple (ISI)** – a more refined grouping method using size-based partitioning.
 
 <p align="center">
-  <img src="./pics/Greedy.png" alt="Three heuristic greedy algorithms" width="500"/>
+  <img src="./pics/Greedy.png" alt="Two heuristic greedy algorithms" width="500"/>
 </p>
 
 
@@ -130,7 +129,7 @@ Although they **do not guarantee optimal solutions**, they are **much faster** t
 * **Connected Components**: computes components within the neighbor subgraph
 * **Greedy Packing**:
 
-  * NF, SI, ISI grouping strategies
+  * NF, SI grouping strategies
   * Plan edges within budget \$b\$
 * **Result Writer**: logs query results and summary statistics
 
@@ -162,7 +161,6 @@ Run:
 
   * `1` = Next Fit (NF)
   * `2` = Simple (SI)
-  * `3` = Improved Simple (ISI)
 * `--test file` : test query file
 * `--seed S` : random seed (default = 42)
 * `--trials T` : number of trials (default = 1)
