@@ -12,7 +12,7 @@ This project contains three main components for graph diversity optimization:
 The `data_pre.cpp` program is used to preprocess the input graph dataset and generate query nodes for subsequent experiments. The input graph is stored as an edge list, where each line represents an undirected edge (`node1 node2`). 
 For example, to preprocess the Amazon dataset (`amazon.txt`), first modify the input file name in `data_pre.cpp`:
 ```
-string inputFile = "web-Google.txt";
+string inputFile = "amazon.txt";
 ```
 Compile and run the preprocessing program:
 ```
@@ -27,7 +27,7 @@ After preprocessing, two query files will be generated:
 query_data/amazon.txt_train.txt
 query_data/amazon.txt_test.txt
 ```
-The generated files contain the node IDs used as queries in subsequent experiments. After obtaining these query sets, use the corresponding training and testing scripts to run the model. The training process reads queries from amazon_train.txt, while evaluation uses queries from amazon_test.txt. No additional data preprocessing is required after this step.
+The generated files contain the node IDs used as queries in subsequent experiments. After obtaining these query sets, use the corresponding training and testing scripts to run the model. The training process reads queries from amazon.txt_train, while evaluation uses queries from amazon.txt_test. No additional data preprocessing is required after this step.
 
 ---
 ## 🔹 Exact Algorithm (`exact`)
