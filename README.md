@@ -235,3 +235,7 @@ python main.py --graph graph.txt --tau <tau> --budget <b> --train training_query
 * Logs training progress and results per query node
 * Saves model checkpoints and final diversity metrics
 * Summary statistics include total diversity increase and runtime
+
+### Data Preprocessing
+
+The original graph is provided as an edge list and is first converted into an undirected graph. For each node, we analyze the connectivity of its neighbor-induced subgraph and count the number of connected components. Nodes with at least 20 neighbors and at least 2 connected components among their neighbors are selected as query nodes. The selected query nodes are then randomly split into training and testing sets with an 80/20 ratio.
