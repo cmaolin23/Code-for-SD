@@ -7,7 +7,24 @@ This project contains three main components for graph diversity optimization:
 3. **Reinforcement Learning (`RL`)** – an A2C-based method, implemented in **Python + PyTorch**
 
 ---
+## Data Preprocessing and Running Pipeline
 
+The `data_pre.cpp` program is used to preprocess the input graph dataset and generate query nodes for subsequent experiments. The input graph is stored as an edge list, where each line represents an undirected edge (`node1 node2`). 
+For example, to preprocess the DBLP dataset (`dblp.txt`), first modify the input file name in `data_pre.cpp`:
+
+```cpp
+string inputFile = "dblp.txt";
+Compile and run the preprocessing program:
+g++ data_pre.cpp -o data_pre -std=c++11
+./data_pre
+The preprocessing program reads dblp.txt, constructs the graph, and selects suitable query nodes based on the connectivity of their neighbor-induced subgraphs. Specifically, nodes with sufficient neighbors and complex local structures are selected as query nodes. The selected query nodes are then randomly divided into training and testing sets with an 80/20 ratio.
+
+After preprocessing, two query files will be generated:
+query_data/dblp_train.txt
+query_data/dblp_test.txt
+
+The generated files contain the node IDs used as queries in subsequent experiments. After obtaining these query sets, use the corresponding training and testing scripts to run the model. The training process reads queries from dblp_train.txt, while evaluation uses queries from dblp_test.txt. No additional data preprocessing is required after this step.
+---
 ## 🔹 Exact Algorithm (`exact`)
 
 ### File 
@@ -236,6 +253,3 @@ python main.py --graph graph.txt --tau <tau> --budget <b> --train training_query
 * Saves model checkpoints and final diversity metrics
 * Summary statistics include total diversity increase and runtime
 
-### Data Preprocessing
-
-The original graph is provided as an edge list and is first converted into an undirected graph. For each node, we analyze the connectivity of its neighbor-induced subgraph and count the number of connected components. Nodes with at least 20 neighbors and at least 2 connected components among their neighbors are selected as query nodes. The selected query nodes are then randomly split into training and testing sets with an 80/20 ratio.
