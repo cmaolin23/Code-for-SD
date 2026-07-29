@@ -7,7 +7,7 @@ This project contains three main components for graph diversity optimization:
 3. **Reinforcement Learning (`RL`)** – an A2C-based method, implemented in **Python + PyTorch**
 
 ---
-## Data Preprocessing and Running Pipeline
+## Data Preprocessing
 
 The `data_pre.cpp` program is used to preprocess the input graph dataset and generate query nodes for subsequent experiments. The input graph is stored as an edge list, where each line represents an undirected edge (`node1 node2`). 
 For example, to preprocess the DBLP dataset (`dblp.txt`), first modify the input file name in `data_pre.cpp`:
