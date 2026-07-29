@@ -11,12 +11,15 @@ This project contains three main components for graph diversity optimization:
 
 The `data_pre.cpp` program is used to preprocess the input graph dataset and generate query nodes for subsequent experiments. The input graph is stored as an edge list, where each line represents an undirected edge (`node1 node2`). 
 For example, to preprocess the Amazon dataset (`amazon.txt`), first modify the input file name in `data_pre.cpp`:
-
+```
+string inputFile = "web-Google.txt";
+```
 Compile and run the preprocessing program:
 ```
 g++ data_pre.cpp -o data_pre -std=c++11
 ./data_pre
 ```
+
 The preprocessing program reads amazon.txt, constructs the graph, and selects suitable query nodes based on the connectivity of their neighbor-induced subgraphs. Specifically, nodes with sufficient neighbors and complex local structures are selected as query nodes. The selected query nodes are then randomly divided into training and testing sets with an 80/20 ratio.
 
 After preprocessing, two query files will be generated:
