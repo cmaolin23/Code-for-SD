@@ -300,19 +300,7 @@ static vector<vector<int>> improvedSimpleBins(const vector<CompInfo> &U, int tau
     sort(X.begin(), X.end(), cmp);
     sort(Y.begin(), Y.end(), cmp);
     sort(Z.begin(), Z.end(), cmp);
-    // 输出 X, Y, Z 分组
-    // cout << "X group (size >= tau/2): ";
-    // for (int idx : X)
-    //     cout << "(id=" << idx << ",sz=" << U[idx].size << ") ";
-    // cout << "\n";
-    // cout << "Y group (size >= tau/3): ";
-    // for (int idx : Y)
-    //     cout << "(id=" << idx << ",sz=" << U[idx].size << ") ";
-    // cout << "\n";
-    // cout << "Z group (size < tau/3): ";
-    // for (int idx : Z)
-    //     cout << "(id=" << idx << ",sz=" << U[idx].size << ") ";
-    // cout << "\n";
+
 
     vector<vector<int>> bins;
 
