@@ -12,11 +12,11 @@ This project contains three main components for graph diversity optimization:
 The `data_pre.cpp` program is used to preprocess the input graph dataset and generate query nodes for subsequent experiments. The input graph is stored as an edge list, where each line represents an undirected edge (`node1 node2`). 
 For example, to preprocess the DBLP dataset (`dblp.txt`), first modify the input file name in `data_pre.cpp`:
 
-```cpp
-string inputFile = "dblp.txt";
 Compile and run the preprocessing program:
+```
 g++ data_pre.cpp -o data_pre -std=c++11
 ./data_pre
+```
 The preprocessing program reads dblp.txt, constructs the graph, and selects suitable query nodes based on the connectivity of their neighbor-induced subgraphs. Specifically, nodes with sufficient neighbors and complex local structures are selected as query nodes. The selected query nodes are then randomly divided into training and testing sets with an 80/20 ratio.
 
 After preprocessing, two query files will be generated:
@@ -24,6 +24,7 @@ query_data/dblp_train.txt
 query_data/dblp_test.txt
 
 The generated files contain the node IDs used as queries in subsequent experiments. After obtaining these query sets, use the corresponding training and testing scripts to run the model. The training process reads queries from dblp_train.txt, while evaluation uses queries from dblp_test.txt. No additional data preprocessing is required after this step.
+
 ---
 ## 🔹 Exact Algorithm (`exact`)
 
